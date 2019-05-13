@@ -1,0 +1,22 @@
+{
+  "name": "lab4",
+  "version": "1.0.0",
+  "description": "news api",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --open --mode development",
+    "prod": "webpack --mode production"
+  },
+  "author": "vitaly",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "babel-loader": "^8.0.6",
+    "eslint": "^5.16.0",
+    "path": "^0.12.7",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.3.1"
+  }
+}

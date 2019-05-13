@@ -1,0 +1,121 @@
+body {
+	background-color: #373c3f;
+}
+
+body > div {
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	padding: 15px 0px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.news-block__sources {
+	width: 40%;
+}
+
+.news-block {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 60%;
+}
+
+.news__tmpl__link {
+		
+}
+
+.news-block__sources__all,
+.tmpl__source__button {
+	width: 100%;
+	background-color: black;
+	color: antiquewhite;
+	border: 2px solid white;
+}
+
+.news-block__sources__all:hover,
+.tmpl__source__button:hover {
+	border: 2px solid aqua;
+	color: aqua;
+}
+
+.news-block__no-articles-message {
+	color: red;
+	display: none;
+}
+
+footer {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+footer a {
+	border: 1px solid white;
+	padding: 5px;
+	color: white;
+	text-decoration: none;
+}
+
+header {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 10px 5px;
+}
+
+.find-button {
+	background-color: aqua;
+	border: 0px;
+	color: black;
+	font-size: 20px;
+	padding: 5px;
+}
+
+.find-button:hover {
+	background-color: blue;
+	color: white;
+}
+
+.find-text {
+	fond-size: 20px;
+	padding: 5px;
+	width: 50%;
+}
+
+.load-more-button {
+	width: 30%;
+	background-color: aqua;
+	border: 0px;
+	font-size: 20px;
+	padding: 5px;
+}
+
+.news-block__news-list {
+	width: 100%;
+}
+
+.news-block__news-list > p {
+	width: 100%;
+}
+
+.news-block__news-list a {
+	width: 100%;
+}
+
+.news-block__news-list img {
+	width: 100%;
+}
+
+.news__tmpl__link {
+	text-decoration: none;
+	color: white;
+}
+
+@media all and (max-width: 625px) {
+	
+.news__tmpl__description {
+	display: none;
+}
+
+}
