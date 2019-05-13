@@ -1,4 +1,3 @@
-
 function clear_news_list(info) {
 	let list = document.getElementsByClassName('news__tmpl__link');
 	let i;
@@ -42,7 +41,7 @@ function show_sources(source_arr) {
 	for (i=0; i<source_arr.length; i++) {
 		create_source_block(source_arr[i], fragment);
 	}
-	document.querySelector('.news-block__sources').appendChild(fragment);
+	document.querySelector('.news-block__sources__specific').appendChild(fragment);
 }
 
 function clear_news() {

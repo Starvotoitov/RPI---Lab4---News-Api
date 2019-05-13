@@ -9,8 +9,6 @@ let news_info = {
 		};
 
 function update_news(data, info) {
-	console.log(data);
-	
 	news_arr.length = 0;
 	if (info.displayed_news_count < 40) {
 		for (i=0; i<data.articles.length; i++)
@@ -22,7 +20,6 @@ function update_news(data, info) {
 }
 
 function update_sources(data) {
-
 	news_arr.length = 0;
 	for (i=0; i<data.sources.length; i++)
 		news_arr[i] = data.sources[i];
