@@ -11,34 +11,39 @@ function get_news(info) {
 	return fetch(req);	
 }
 
+function find_source_button(elem)
+{
+	while (elem.tagName !== 'BUTTON')
+		elem = elem.parentNode;
+	return elem;
+}
+
 function set_sources_eventListeners() {
-	let sources = document.getElementsByClassName('tmpl__source__button');
-	for (i=0; i<sources.length; i++) {
-		sources[i].addEventListener('click', function() {
-			set_source(news_info, this);
-			clear_news();
-			get_news(news_info)
-			.then(function(response) { return response.json(); })
-			.then(data => update_news(data, news_info))
-			.then(() => show_news(news_arr, news_info));			
-		})
-	}
+	document.querySelector('.news-block__sources__specific').addEventListener('click', function() {
+		let source_button = find_source_button(event.target);
+		set_source(news_info, source_button);
+		clear_news();
+		get_news(news_info)
+		.then(response => { return response.json() })
+		.then(data => update_news(data, news_info))
+		.then(() => show_news(news_arr, news_info));
+	});
 }
 
 get_sources()
-.then(function(response) { return response.json(); })
+.then(response => { return response.json() })
 .then(data => update_sources(data))
 .then(() => show_sources(news_arr))
 .then(() => set_sources_eventListeners());
 
 get_news(news_info)
-.then(function(response) { return response.json(); })
+.then (response => { return response.json() })
 .then(data => update_news(data, news_info))
 .then(() => show_news(news_arr, news_info));
 
 document.querySelector('#load-more').addEventListener('click', function() {
 	get_news(news_info)
-	.then(function(response) { return response.json(); })
+	.then (response => { return response.json() })
 	.then(data => update_news(data, news_info))
 	.then(() => show_news(news_arr, news_info));
 });
@@ -47,7 +52,7 @@ document.querySelector('.find-button').addEventListener('click', function() {
 	set_q(news_info);
 	clear_news();
 	get_news(news_info)
-	.then(function(response) { return response.json(); })
+	.then (response => { return response.json() })
 	.then(data => update_news(data, news_info))
 	.then(() => show_news(news_arr, news_info));				
 });
@@ -58,7 +63,7 @@ document.querySelector('.find-text').addEventListener('keydown', function() {
 		set_q(news_info);
 		clear_news();
 		get_news(news_info)
-		.then(function(response) { return response.json(); })
+		.then (response => { return response.json() })
 		.then(data => update_news(data, news_info))
 		.then(() => show_news(news_arr, news_info));		
 	}
@@ -68,7 +73,7 @@ document.querySelector('.news-block__sources__all').addEventListener('click', fu
 	show_all(news_info);
 	clear_news();
 	get_news(news_info)
-	.then(function(response) { return response.json(); })
+	.then (response => { return response.json() })
 	.then(data => update_news(data, news_info))
 	.then(() => show_news(news_arr, news_info));	
 });
